@@ -3,13 +3,6 @@ ylhelloworld.github.com
 
 
 
-First Secontion
+Home Page
 ----------------
-first section
-
-
-
-
-Second Seconion
-----------------
-second section
+ [http://ylhelloworld.github.io](http://ylhelloworld.github.io) 
