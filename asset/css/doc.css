@@ -1,0 +1,21 @@
+﻿
+/*Panel Heading */
+.panel-heading {
+  padding : 7px 5px; 
+}
+/*List Group */
+.list-group-item { 
+ padding : 7px 5px; 
+}
+/*Breadcrumb*/
+.breadcrumb { 
+ margin-bottom : 0px; 
+}
+/*Btn*/
+.btn{
+	padding:5px 12px;
+}
+/*FormControl*/
+.form-control{
+    height:30px;
+}

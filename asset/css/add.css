@@ -1,0 +1,313 @@
+
+/*****************************************************************************
+ * Time Line
+*****************************************************************************/
+.time-line> .row {
+	margin-left:20px;  
+} 
+.time-line> .row > .col-md-3{
+	color: #999;font-size: 25px;
+} 
+.time-line>.row> .col-md-9{
+	border-left: solid 4px #ccc; padding-left:5px;
+} 
+.time-line>.row> .col-md-9 > p > a{
+	color:#000; font-size:14px;
+} 
+.time-line> hr{
+	font-size:20px; border-style:dotted; border-top-width:medium;
+}
+
+/*****************************************************************************
+ * Back To Top
+*****************************************************************************/
+.to-top {
+	    width:100px;
+        border:1px solid #ccc;
+        background:#f7f7f7;
+        text-align:center;
+        padding:5px;
+        position:fixed; /* this is the magic */
+        bottom:10px; /* together with this to put the div at the bottom*/
+        right:10px;
+        cursor:pointer;
+        display:none;
+        color:#333;
+        font-family:verdana;
+        font-size:14px;
+}
+
+
+/*****************************************************************************
+ * Callouts
+ *
+ * Not quite alerts, but custom and helpful notes for folks reading the docs.
+ * Requires a base and modifier class.
+ * Common styles for all types 
+*****************************************************************************/
+.bs-callout {
+  margin: 20px 0;
+  padding: 20px;
+  border-left: 3px solid #eee;
+}
+.bs-callout h4 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+.bs-callout p:last-child {
+  margin-bottom: 0;
+}
+
+/* Variations */
+.bs-callout-danger {
+  background-color: #fdf7f7;
+  border-color: #eed3d7;
+}
+.bs-callout-danger h4 {
+  color: #b94a48;
+}
+.bs-callout-warning {
+  background-color: #faf8f0;
+  border-color: #faebcc;
+}
+.bs-callout-warning h4 {
+  color: #8a6d3b;
+}
+.bs-callout-info {
+  background-color: #f4f8fa;
+  border-color: #bce8f1;
+}
+.bs-callout-info h4 {
+  color: #34789a;
+}
+/*****************************************************************************
+ *  BS Examples
+ *
+ * Isolated sections of example content for each component or feature. Usually
+ * followed by a code snippet.
+*****************************************************************************/
+
+.bs-example {
+  position: relative;
+  padding: 45px 15px 15px;
+  margin: 0 -15px 15px;
+  background-color: #fafafa;
+  box-shadow: inset 0 3px 6px rgba(0,0,0,.05);
+  border-color: #e5e5e5 #eee #eee;
+  border-style: solid;
+  border-width: 1px 0;
+}
+/* Echo out a label for the example */
+.bs-example:after {
+  content: "Example";
+  position: absolute;
+  top:  15px;
+  left: 15px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #bbb;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Tweak display of the code snippets when following an example */
+.bs-example + .highlight {
+  margin: -15px -15px 15px;
+  border-radius: 0;
+  border-width: 0 0 1px;
+}
+
+/* Make the examples and snippets not full-width */
+@media (min-width: 768px) {
+  .bs-example {
+    margin-left: 0;
+    margin-right: 0;
+    background-color: #fff;
+    border-width: 1px;
+    border-color: #ddd;
+    border-radius: 4px 4px 0 0;
+    box-shadow: none;
+  }
+  .bs-example + .highlight {
+    margin-top: -16px;
+    margin-left: 0;
+    margin-right: 0;
+    border-width: 1px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+}
+
+
+/*****************************************************************************
+ * BS Form Wizard
+*****************************************************************************/
+.bs-wizard {margin-top: 40px;}
+ 
+.bs-wizard {border-bottom: solid 1px #e0e0e0; padding: 0 0 10px 0;}
+.bs-wizard > .bs-wizard-step {padding: 0; position: relative;}
+.bs-wizard > .bs-wizard-step + .bs-wizard-step {}
+.bs-wizard > .bs-wizard-step .bs-wizard-stepnum {color: #595959; font-size: 16px; margin-bottom: 5px;}
+.bs-wizard > .bs-wizard-step .bs-wizard-info {color: #999; font-size: 14px;}
+.bs-wizard > .bs-wizard-step > .bs-wizard-dot {position: absolute; width: 30px; height: 30px; display: block; background: #fbe8aa; top: 45px; left: 50%; margin-top: -15px; margin-left: -15px; border-radius: 50%;} 
+.bs-wizard > .bs-wizard-step > .bs-wizard-dot:after {content: ' '; width: 14px; height: 14px; background: #fbbd19; border-radius: 50px; position: absolute; top: 8px; left: 8px; } 
+.bs-wizard > .bs-wizard-step > .progress {position: relative; border-radius: 0px; height: 8px; box-shadow: none; margin: 20px 0;}
+.bs-wizard > .bs-wizard-step > .progress > .progress-bar {width:0px; box-shadow: none; background: #fbe8aa;}
+.bs-wizard > .bs-wizard-step.complete > .progress > .progress-bar {width:100%;}
+.bs-wizard > .bs-wizard-step.active > .progress > .progress-bar {width:50%;}
+.bs-wizard > .bs-wizard-step:first-child.active > .progress > .progress-bar {width:0%;}
+.bs-wizard > .bs-wizard-step:last-child.active > .progress > .progress-bar {width: 100%;}
+.bs-wizard > .bs-wizard-step.disabled > .bs-wizard-dot {background-color: #f5f5f5;}
+.bs-wizard > .bs-wizard-step.disabled > .bs-wizard-dot:after {opacity: 0;}
+.bs-wizard > .bs-wizard-step:first-child  > .progress {left: 50%; width: 50%;}
+.bs-wizard > .bs-wizard-step:last-child  > .progress {width: 50%;}
+.bs-wizard > .bs-wizard-step.disabled a.bs-wizard-dot{ pointer-events: none; }
+
+/*****************************************************************************
+ * Metro Nav Row
+*****************************************************************************/
+
+.metro-nav-row {
+	text-align: center;
+}
+.metro-nav-row p {
+	padding: 5px;
+}
+.metro-nav-row .col-md-2 {
+	background-color: #fff;
+	border: 1px solid #e0e1db;
+	border-right: none;
+}
+.metro-nav-row .col-md-2:last-child {
+	border: 1px solid #e0e1db;
+}
+.metro-nav-row .col-md-2:first-child {
+	border-radius: 5px 0 0 5px;
+}
+.metro-nav-row .col-md-2:last-child {
+	border-radius: 0 5px 5px 0;
+}
+.metro-nav-row .col-md-2:hover {
+	color: #e92d00;
+    cursor: pointer;
+}
+.metro-nav-row .active {
+	color: #e92d00;
+	margin-top: -6px;
+	border-top: 6px solid #e92d00;
+	border-bottom: 6px solid #e92d00;
+}
+.metro-nav-row .active:before {
+	content: '';
+	position: absolute;
+	border-style: solid;
+	border-width: 6px 6px 0;
+	border-color: #e92d00 transparent;
+	display: block;
+	width: 0;
+	z-index: 1;
+	margin-left: -6px;
+	top: 0;
+	left: 50%;
+}
+.metro-nav-row .glyphicon {
+	padding-top: 15px;
+	font-size: 40px;
+}
+
+/*****************************************************************************
+ * Blockquote Box
+*****************************************************************************/
+.glyphicon-lg{font-size:3em}
+.blockquote-box{border-right:5px solid #E6E6E6;margin-bottom:25px}
+.blockquote-box .square{width:100px;min-height:50px;margin-right:22px;text-align:center!important;background-color:#E6E6E6;padding:20px 0}
+.blockquote-box.blockquote-primary{border-color:#357EBD}
+.blockquote-box.blockquote-primary .square{background-color:#428BCA;color:#FFF}
+.blockquote-box.blockquote-success{border-color:#4CAE4C}
+.blockquote-box.blockquote-success .square{background-color:#5CB85C;color:#FFF}
+.blockquote-box.blockquote-info{border-color:#46B8DA}
+.blockquote-box.blockquote-info .square{background-color:#5BC0DE;color:#FFF}
+.blockquote-box.blockquote-warning{border-color:#EEA236}
+.blockquote-box.blockquote-warning .square{background-color:#F0AD4E;color:#FFF}
+.blockquote-box.blockquote-danger{border-color:#D43F3A}
+.blockquote-box.blockquote-danger .square{background-color:#D9534F;color:#FFF}
+
+
+/*****************************************************************************
+ * Carousal Column
+*****************************************************************************/ 
+.carousel-col-item{
+    border: 1px solid #E1E1E1;
+    border-radius: 5px;
+    background: #FFF;
+}
+.carousel-col-item .photo img{
+    margin: 0 auto;
+    width: 100%;
+}
+.carousel-col-item .info
+{
+    padding: 10px;
+    border-radius: 0 0 5px 5px;
+    margin-top: 1px;
+}
+.carousel-col-item:hover .info {
+    background-color: #F5F5DC;
+}
+.carousel-col-item .price{
+    /*width: 50%;*/
+    float: left;
+    margin-top: 5px;
+}
+.carousel-col-item .price h5{
+    line-height: 20px;
+    margin: 0;
+}
+.price-text-color{
+    color: #219FD1;
+}
+.carousel-col-item .info .rating{
+    color: #777;
+}
+.carousel-col-item .rating{
+    /*width: 50%;*/ 
+    font-size: 17px;
+    text-align: right;
+    line-height: 20px;
+    margin-bottom: 10px;
+    height: 20px;
+}
+.carousel-col-item .separator{
+    border-top: 1px solid #E1E1E1;
+}
+.clear-left{
+    clear: left;
+}
+.carousel-col-item .separator p{
+    line-height: 20px;
+    margin-bottom: 0;
+    margin-top: 10px;
+    text-align: center;
+}
+.carousel-col-item .separator p i{
+    margin-right: 5px;
+}
+.carousel-col-item .btn-add{
+    width: 50%;
+    float: left;
+}
+.carousel-col-item .btn-add{
+    border-right: 1px solid #E1E1E1;
+}
+.carousel-col-item .btn-details{
+    width: 50%;
+    float: left;
+    padding-left: 10px;
+}
+.controls{
+    margin-top: 5px;
+    margin-bottom:5px;
+}
+[data-slide="prev"]{
+    margin-right: 10px;
+} 
