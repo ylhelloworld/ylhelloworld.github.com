@@ -31,8 +31,8 @@ a.dotted {border-bottom: 1px black dotted; display: block;}
 a.dotted:hover {text-decoration: none;}
 
 /* Portrait tablet to landscape and desktop */
-@media (min-width: 900px) { 
-  .platform {width:980px; }
+@media (min-width: 768px) { 
+  .platform {width:750px; }
   .section-title { width: 180px; }
   .section-body { width: 690px; }
   
@@ -40,7 +40,7 @@ a.dotted:hover {text-decoration: none;}
 
   .item-name { max-width:550px; font-size: 16px; font-weight: bold; color: #2e4dbf;}
   .item-desc { max-width:550px; font-size:14px; font-style: italic;}
-  .item-period {border: 1px solid #ddd; font-size: 12px; padding:2px 5px 2px 5px;}
+  .item-period {border: 1px solid #ddd; font-size: 12px; padding:2px 5px 2px 5px;margin-right:10px}
 }
  
 /* Landscape phone to portrait tablet */
