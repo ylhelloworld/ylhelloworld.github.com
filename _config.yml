@@ -3,8 +3,8 @@ title: Sheep Dragon's Blog
 SEOTitle: Sheep Dragon's Blog
 header-img: img/home-bg.jpg
 email: huxpro@gmail.com
-description: ".Net Framework,C#,Python,Ruby"
-keyword: "Sheep Dragon,yl_helloworld,Develop"
+description: "Python,SqlServer"
+keyword: "Python,SqlServer"
 url: "https://ylhelloworld.github.com"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
