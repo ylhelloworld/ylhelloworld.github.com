@@ -6,7 +6,8 @@ date:       2018-05-20 12:00:00
 author:     "YangLong"
 header-img: "img/post-bg-nextgen-web-pwa.jpg"
 header-mask: 0.3
-catalog:      true
+catalog:      true  
+multilingual: false 
 tags:
     - Spark
     - Big Data
