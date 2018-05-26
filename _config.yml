@@ -68,7 +68,7 @@ ga_domain: huangxuan.me
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "累了就睡觉,醒了就微笑"
-sidebar-avatar: /img/avatar-yl.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/avatar-yl-home.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
