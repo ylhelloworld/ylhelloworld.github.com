@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="home_app">
+<head>
+    <!--JQuery-->
+    <script src="asset/js/jquery-1.9.1.js" type="text/javascript"></script>
+    
+    <!--BootStrap-->
+    <link href="asset/bootstrap_3.1/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="asset/bootstrap_3.1/css/bootstrap-theme.css" rel="stylesheet" type="text/css" />
+    <link href="asset/font_awesome_4.1.0/css/font-awesome.css" rel="stylesheet" type="text/css" /> 
+    <script src="asset/bootstrap_3.1/js/bootstrap.js" type="text/javascript"></script>
+
+     
+     
+    <!--Page CSS-->
+    <link href="asset/css/add.css" rel="stylesheet" type="text/css" /> 
+    
+    
+    <!-- <link href="asset/css/docs.css" rel="stylesheet" type="text/css" />-->
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+          <script src="asset/bootstrap_3.1/js/respond.js" type="text/javascript"></script>
+    <![endif]-->  
+    
+    <!--hight light--> 
+    <script src="asset/highlight_4.0/highlight.pack.js" type="text/javascript"></script> 
+    <link href="asset/highlight_4.0/styles/vs.css" rel="stylesheet" type="text/css" /> 
+    <script type="text/javascript">
+          hljs.configure({tabReplace: '    '});
+          hljs.initHighlightingOnLoad();
+    </script>
+</head>
+<body > 
+
+    <div class="container"> 
+        <div class="page-header">
+            <h2>Net Helper <small>net&web helper</small></h2> 
+        </div>
+        <div class="row">
+	     <div class="col-md-3">
+	        <div class="list-group" style="margin-top:50px;">
+                  <a href="#" class="list-group-item active">Url Select Helper</a>
+                  <a href="#template_helper_header" class="list-group-item">Template Select Helper</a>
+                  <a href="#" class="list-group-item">Html Helper</a>
+                  <a href="#" class="list-group-item">MongoDB Helper</a>
+                  <a href="#" class="list-group-item">SQL Server Helper</a>
+             </div>
+	     </div>
+	      <div class="col-md-9">
+	         <div class="page-header">
+	           <h4>Url Select Helper <small  style="font-size:15px;"> Helper/UrlSelectHelpre.cs</small></h4>
+	         </div> 
+	         <p>如下表定义URL模板，用于Pick符合要求的URL网页，<code> P0 </code>Url中无参数，为固定值、<code> P1 </code>Url中有1个参数、<code> P2 </code>Url中有2个参数、
+	         <code> PN </code>Url中有N个参数、<code> D0 </code>存储在MongoDB中的URL、<code> D1 </code>有一个参数存在于MongoDB中、<code> DN </code>有n个参数存在于MongoDB中 </p>
+	         <table class="table table-bordered ">
+	            <thead>
+	                <tr><th>Type</th><th>Template ID</th><th>Url</th><th>Url Values</th><th>Doc Values</th></tr>
+	            </thead>
+	            <tbody>
+	                <tr><td> P0</td><td>ID</td><td>-----?id=helloworld</td><td>NULL  </td><td>NULL</td></tr>
+	                <tr><td> P1</td><td>ID</td><td>-----?id={0} </td><td>①  </td><td>NULL</td></tr>
+	                <tr><td> P2</td><td>ID</td><td>-----?id={0}&name={1}  </td><td>②  </td><td>NULL</td></tr>
+	                <tr><td> PN</td><td>ID</td><td>-----?id={0}&name={1}......</td><td>③  </td><td>NULL</td></tr>
+	                <tr><td> D0</td><td>ID</td><td>NULL</td><td>{'doc_id':'test'}#image.url  </td><td>{url:['---?id=2','----?id=3'...]}</td></tr>
+	                <tr><td> D1</td><td>ID</td><td>-----?id={0} </td><td>{'doc_id':'test'}#image.url  </td><td>{url:['1','2'....]} </td></tr>
+	                <tr><td> DN</td><td>ID</td><td>-----?id={0}&name={1}......</td><td>{'doc_id':'test'}#image.url  </td><td>{url:[[2,3..],[4,9...]....]}</td></tr> 
+	            </tbody> 
+	         </table> 
+	         <div class="bs-callout bs-callout-info">
+	            <h4>备注</h4>
+	            <p>①P1 url_values: {'values':['1','2','3','4'],'range':[1,200]}</p>
+	            <p>②P2 url_values: {'values':[['100','3'],['200','2'],['125','5']],'range':[[['0','150'],['1','5']],[['200','300'],['1','4']]]}</p>
+	            <p>③PN url_values:{'values':[['100','3','333'],['200','2','33'],['125','5','3434']]}</p>
+	         </div>
+            <div class="bs-example">
+                <pre><code>        private void btn_pick_Click(object sender, EventArgs e)
+        {
+                foreach (DataGridViewRow row in dgv_find_result.Rows)
+                {
+                    if (Convert.ToBoolean(row.Cells["selected"].Value) == true && String.IsNullOrEmpty(row.Cells["id"].Value.ToString()) == false)
+                    {
+                        string template_id = row.Cells["template_id"].Value.ToString();
+                        ArrayList list = UrlSelectHelper.get_fixed_urls(row.Cells["id"].Value.ToString());
+                        foreach (string item in list)
+                        {
+                            this.txt_pick_result.Text += item + Environment.NewLine;
+                            TemplateHelper.save_html_to_db(item, template_id);
+                        }
+                    } 
+                }
+        } 
+                 </code></pre>
+            </div>
+              <div class="page-header" id="template_helper_header">
+	           <h4>Template  Helper <small  style="font-size:15px;"> Helper/TemplateHelper.cs</small></h4>
+	         </div>  
+	         <p>从对应网页中更具模板选取内容，<code> F </code>表示固定值、<code> U </code>表示URL种值，可根据正则表达式选取、<code> H </code>表示HTML中某个元元素、
+	         <code> FR </code>表示HTML中的固定URL及其模板、<code> HR </code>表示HTML中元素URL及其模板、<code> IMG </code>表示图片内容，并自动下载图片</p>
+	         <table class="table table-bordered">
+	            <thead>
+	                <tr><th>Type</th><th>HTML PATH </th><th> Regular PATH</th><th> DOC PATH </th><th>Redirect Template ID</th></tr>
+	            </thead>
+	            <tbody>
+	                 <tr>
+	                      <td> F </td>
+	                      <td>Fixed Value</td>
+	                      <td>X</td>
+	                      <td>ALL</td>
+	                      <td>X</td>
+	                 </tr>
+	                 <tr>
+	                      <td> U  </td>
+	                      <td> URL  Value </td>
+	                      <td>√ </td>
+	                      <td>ALL</td>
+	                      <td>X</td>
+	                 </tr>
+	                 <tr>
+	                      <td> H  </td>
+	                      <td>HTML Path  </td>
+	                      <td>√ </td>
+	                      <td>ALL,INNER,PROPERTY</td>
+	                      <td>X</td>
+	                 </tr>
+	                 <tr>
+	                      <td> FR  </td>
+	                      <td>Fixed Value   </td>
+	                      <td> X  </td>
+	                      <td>ALL</td>
+	                      <td> √ </td>
+	                 </tr>
+	                 <tr>
+	                      <td> HR  </td>
+	                      <td>HTML Path    </td>
+	                      <td> √  </td>
+	                      <td>ALL,INNER,PROPERTY </td>
+	                      <td> √ </td>
+	                 </tr>  
+	                 <tr>
+	                      <td> IMG  </td>
+	                      <td>HTML Path    </td>
+	                      <td> √  </td>
+	                      <td>ALL,INNER,PROPERTY </td>
+	                      <td> X </td>
+	                 </tr>    
+	            </tbody> 
+	         </table> 
+	         <div class="bs-callout bs-callout-info">
+	            <h4>备注</h4>
+	            <p>Regular path:是否支持正则表达式</p> 
+	            <p>Doc Path:ALL表示对应元素HTML内容、INNER表示对应元素内部HTML内容、PROPERTY表示对应元素的属性值</p>
+	         </div>
+            <div class="bs-example">
+                <pre><code>        private void btn_pick_Click(object sender, EventArgs e)
+        {
+                foreach (DataGridViewRow row in dgv_find_result.Rows)
+                {
+                    if (Convert.ToBoolean(row.Cells["selected"].Value) == true && String.IsNullOrEmpty(row.Cells["id"].Value.ToString()) == false)
+                    {
+                        string template_id = row.Cells["template_id"].Value.ToString();
+                        ArrayList list = UrlSelectHelper.get_fixed_urls(row.Cells["id"].Value.ToString());
+                        foreach (string item in list)
+                        {
+                            this.txt_pick_result.Text += item + Environment.NewLine;
+                            TemplateHelper.save_html_to_db(item, template_id);
+                        }
+                    } 
+                }
+        } 
+                 </code></pre>
+            </div>
+          </div>
+          
+        </div>
+    </div>
+</body>
+</html>

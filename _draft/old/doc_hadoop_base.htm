@@ -1,0 +1,213 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="home_app">
+<head>
+    <!--JQuery-->
+    <script src="asset/js/jquery-1.9.1.js" type="text/javascript"></script>
+    
+    <!--BootStrap-->
+    <link href="asset/bootstrap_3.1/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="asset/bootstrap_3.1/css/bootstrap-theme.css" rel="stylesheet" type="text/css" />
+    <link href="asset/font_awesome_4.1.0/css/font-awesome.css" rel="stylesheet" type="text/css" /> 
+    <script src="asset/bootstrap_3.1/js/bootstrap.js" type="text/javascript"></script>
+
+     <!--hight light--> 
+    <script src="asset/highlight_4.0/highlight.pack.js" type="text/javascript"></script>    
+    <link href="asset/highlight_4.0/styles/github.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+          hljs.configure({tabReplace: '    '});
+          hljs.initHighlightingOnLoad();
+    </script>
+     
+    <!--Page CSS-->
+    <link href="asset/css/add.css" rel="stylesheet" type="text/css" /> 
+    
+    
+    <!-- <link href="asset/css/docs.css" rel="stylesheet" type="text/css" />-->
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+          <script src="asset/bootstrap_3.1/js/respond.js" type="text/javascript"></script>
+    <![endif]-->  
+    
+    
+</head>
+<body > 
+
+    <div class="container"> 
+        <div class="page-header">
+            <h2>Hadoop 基础使用<small>  本机、分布式配置，基础编程</small></h2> 
+        </div>
+        <div class="row">
+	     <div class="col-md-3">
+	        <div class="list-group" style="margin-top:50px;">
+                  <a href="#section1" class="list-group-item active">一,本机测试配置</a>
+                  <a href="#section2" class="list-group-item">二,分布式配置</a>
+                  <a href="#section3" class="list-group-item">三,程式开发示例</a> 
+             </div>
+	     </div>
+	      <div class="col-md-9">
+	         <div id="section1"  class="page-header">
+	           <h3>一,本机测试配置</h3> 
+	         </div>
+	          <h4>安装采用伪分布式配置的 Hadoop</h4>
+	          <pre><code> apt-get install hadoop-0.20-conf-pseudo </code></pre> 
+	          <h4>启动Hadoop</h4> 
+	          <pre><code> hadoop-0.20  namenode  -format
+/usr/lib/hadoop-0.20/bin/start-dfs.sh
+/usr/lib/hadoop-0.20/bin/start-mapred.sh </code></pre>
+               <h4>检查HDFS</h4>
+	          <pre><code>hadoop-0.20 fs -ls  </code></pre> 
+	          <h4>测试Hadoop</h4>
+	          <pre><code>hadoop-0.20 fs -mkdir input
+hadoop-0.20 fs -put /usr/src/linux-source-2.6.27
+hadoop-0.20 fs -ls input
+hadoop-0.20 jar /usr/lib/hadoop-0.20/hadoop-0.20.2+228-examples.ja
+hadoop-0.20 fs -ls /user/root/output
+hadoop-0.20 fs -get output/part-r-00000
+hadoop-0.20 fs -rmr output</code></pre>
+              <h4>升级Hadoop</h4>
+              <pre><code>检查配置 update-alternatives --display hadoop-0.20-conf
+升级配置  update-alternatives --install </code></pre>
+              <div id="section2" class="page-header">
+	              <h3>二,分布式配置</h3> 
+	           </div>
+	          <h4>设置的 Hadoop 节点</h4>
+	          <pre><code>/etc/hosts=&gt;
+ master 192.168.108.133
+ slave1 192.168.108.134
+ slave2 192.168.108.135</code></pre> 
+	          <h4>主节点更新</h4>
+	          <pre><code>/etc/hadoop-0.20/conf.dist/masters  =&gt;master 
+ /etc/hadoop-0.20/conf.dist/slaves =&gt;
+      slave1 
+      slave2</code></pre> 
+	          <h4>定义 HDFS 主节点</h4>
+	          <pre><code>/etc/hadoop-0.20/conf.dist /core-site.xml =&gt;
+&lt;configuration&gt;
+&lt;property&gt;
+&lt;name&gt;fs.default.name&lt;name&gt;
+&lt;value&gt;hdfs://master:54310&lt;value&gt;
+&lt;description&gt;The name and URI of the default FS.&lt;/description&gt;
+&lt;property&gt;
+&lt;configuration&gt;</code></pre> 
+	          <h4>定义 MapReduce jobtracker</h4>
+	          <pre><code>/etc/hadoop-0.20/conf.dist /mapred-site.xml =&gt;
+&lt;configuration&gt;
+&lt;property&gt;
+&lt;name&gt;mapred.job.tracker&lt;name&gt;
+&lt;value&gt;master:54311&lt;value&gt;
+&lt;description&gt;Map Reduce jobtracker&lt;description&gt;
+&lt;property&gt;
+&lt;configuration&gt;</code></pre> 
+	          <h4>默认数据副本</h4>
+	          <pre><code>/etc/hadoop-0.20/conf.dist /hdfs-site.xml =&gt;
+&lt;configuration&gt;
+&lt;property&gt;
+&lt;name&gt;dfs.replication&lt;name&gt;
+&lt;value&gt;2&lt;value&gt;
+&lt;description&gt;Default block replication&lt;description&gt;
+&lt;property&gt;
+&lt;configuration&gt;</code></pre> 	          
+	          <h4>格式化名称节点</h4>
+	          <pre><code>hadoop-0.20 namenode -format</code></pre> 
+	          <h4>启动 Hadoop 守护进程</h4>
+	          <pre><code>/usr/lib/hadoop-0.20/bin/start-dfs.sh
+jps</code></pre> 
+	          <h4>测试HDFS</h4>
+	          <pre><code>hadoop-0.20 fs -df
+hadoop-0.20 fs -ls 
+hadoop-0.20 fs -mkdir test
+hadoop-0.20 fs -ls test
+hadoop-0.20 fs -rmr test
+hadoop-0.20 fsck</code></pre> 
+	          <h4>执行一个MapRduce作业</h4>
+	          <pre><code>hadoop-0.20 fs -mkdir input
+hadoop-0.20 fs -put  /usr/src/linux-source-2.6.27/Doc*/memory-barriers.txt input
+hadoop-0.20 fs -put  /usr/src/linux-source-2.6.27/Doc*/rt-mutex-design.txt input
+hadoop-0.20 fs -ls input
+hadoop-0.20
+jar  /usr/lib/hadoop-0.20/hadoop-0.20.2+228-examples.jar wordcount input output
+fs -ls output</code></pre> 
+              <div id="section3" class="page-header">
+	           <h3>三,程式开发示例</h3> 
+	         </div>
+	          <h4>数据流</h4>
+	          <pre><code>hadoop jar $HADOOP_HOME/hadoop-stream.jar  \
+-input inputData
+-output outputData
+-mapper map_exec
+-reducer reduce_exec</code></pre> 	
+              <h4>Java开发示例</h4>
+	          <pre><code>import java.io.IOException;
+import java.util.StringTokenizer;
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Job;
+import org.apache.hadoop.mapreduce.Mapper;
+import org.apache.hadoop.mapreduce.Reducer;
+import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
+import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+import org.apache.hadoop.util.GenericOptionsParser;
+public class WordCount {
+
+  public static class TokenizerMapper extends Mapper&lt;Object, Text, Text, IntWritable&gt;
+  {
+      private final static IntWritable one = new IntWritable(1);
+      private Text word = new Text();
+      public void map(Object key, Text value, Context context) throws IOException, InterruptedException 
+      {
+          StringTokenizer itr = new StringTokenizer(value.toString());
+          while (itr.hasMoreTokens()) 
+          {
+               word.set(itr.nextToken());
+               context.write(word, one); 
+           }
+        }
+   }
+  
+  public static class IntSumReducer   extends Reducer&lt;Text,IntWritable,Text,IntWritable&gt; 
+  {
+      private IntWritable result = new IntWritable();
+      public void reduce(Text key, Iterable&lt;IntWritable&gt; values,  Context context ) throws IOException, InterruptedException 
+      {
+        int sum = 0;
+        for (IntWritable val : values) 
+        {
+           sum += val.get();
+        }
+        result.set(sum);
+        context.write(key, result);
+      }
+  }
+
+  public static void main(String[] args) throws Exception 
+  {
+      Configuration conf = new Configuration();
+      String[] otherArgs = new GenericOptionsParser(conf, args).getRemainingArgs();
+      if (otherArgs.length != 2) 
+      {
+        System.err.println("Usage: wordcount &lt;in&gt; &lt;out&gt;");
+        System.exit(2);
+      }
+    Job job = new Job(conf, "word count");
+    job.setJarByClass(WordCount.class);
+    job.setMapperClass(TokenizerMapper.class);
+    job.setCombinerClass(IntSumReducer.class);
+    job.setReducerClass(IntSumReducer.class);
+    job.setOutputKeyClass(Text.class);
+    job.setOutputValueClass(IntWritable.class);
+    FileInputFormat.addInputPath(job, new Path(otherArgs[0]));
+    FileOutputFormat.setOutputPath(job, new Path(otherArgs[1]));
+    System.exit(job.waitForCompletion(true) ? 0 : 1);
+  }
+} </code></pre>           	          	          	          	          
+          </div>
+          
+        </div>
+    </div>
+</body>
+</html>
+
+
+
