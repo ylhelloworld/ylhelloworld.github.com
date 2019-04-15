@@ -1,0 +1,84 @@
+---
+layout:     post
+title:      "Dapper的应用"
+subtitle:   "Dapper简介&Dapper应用"
+date:       2017-03-25 12:00:00
+author:     "YangLong"
+header-img: "img/post_spiderman_04.jpg"
+header-mask: 0.3
+catalog:    true 
+multilingual: false  
+tags:
+    - C#.Net Framework
+---
+
+
+## Dapper  
+- 轻量级.Net平台的ORM框架 
+- 基于ADO.NET的Connection的扩展 
+
+##### Execute a query and map the results to a strongly typed List  
+*查询并转换成强类型列表*
+```csp
+public static IEnumerable<T> Query<T>(this IDbConnection cnn, string sql, object param = null, SqlTransaction transaction = null, bool buffered = true)
+```
+
+```csp
+public class Dog
+{
+    public int? Age { get; set; }
+    public Guid Id { get; set; }
+    public string Name { get; set; }
+    public float? Weight { get; set; }
+
+    public int IgnoredProperty { get { return 1; } }
+}
+
+var guid = Guid.NewGuid();
+var dog = connection.Query<Dog>("select Age = @Age, Id = @Id", new { Age = (int?)null, Id = guid });
+```
+##### Execute a query and map it to a list of dynamic objects  
+*查询并将结果转换成动态类型*
+```csp
+public static IEnumerable<dynamic> Query (this IDbConnection cnn, string sql, object param = null, SqlTransaction transaction = null, bool buffered = true)
+```
+
+```csp
+var rows = connection.Query("select 1 A, 2 B union all select 3, 4");
+
+Assert.Equal(1, (int)rows[0].A);
+Assert.Equal(2, (int)rows[0].B);
+Assert.Equal(3, (int)rows[1].A);
+Assert.Equal(4, (int)rows[1].B);
+```
+
+##### Execute a Command that returns no results
+*无结果的查询或执行语句*  
+```csp
+public static int Execute(this IDbConnection cnn, string sql, object param = null, SqlTransaction transaction = null)
+```
+```csp
+var count = connection.Execute(@"
+  set nocount on
+  create table #t(i int)
+  set nocount off
+  insert #t
+  select @a a union all select @b
+  set nocount on
+  drop table #t", new {a=1, b=2 });
+Assert.Equal(2, count);
+```
+##### Execute a Command multiple times
+*执行重复的操作*  
+```csp
+var count = connection.Execute(@"insert MyTable(colA, colB) values (@a, @b)",
+    new[] { new { a=1, b=1 }, new { a=2, b=2 }, new { a=3, b=3 } }
+  );
+Assert.Equal(3, count); // 3 rows inserted: "1,1", "2,2" and "3,3"
+```
+
+##### Stored Procedure
+*执行存储过程*  
+```csp
+var user = cnn.Query<User>("spGetUser", new {Id = 1},commandType: CommandType.StoredProcedure).SingleOrDefault();
+```

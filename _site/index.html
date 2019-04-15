@@ -19,7 +19,7 @@
     <link rel="shortcut icon" href="/img/favicon.ico">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://ylhelloworld.github.com/">
+    <link rel="canonical" href="http://localhost:4000/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -81,7 +81,7 @@
                     </li>
                     
                     <li>
-                        <a href="/about/">About</a>
+                        <a href="/about/">About Me</a>
                     </li>
                     
                     <li>
@@ -154,7 +154,7 @@
 
 
     <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/img/home-bg-window.jpg')">
+<header class="intro-header" style="background-image: url('/img/spiderman/home.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
@@ -184,56 +184,271 @@
             ">
     			
 <div class="post-preview">
-    <a href="/2018/05/20/spark_summary/">
+    <a href="/2018/05/11/qa_with_tensorflow/">
         <h2 class="post-title">
-            Spark Summary
+            基于Tensorflow的问答系统
         </h2>
         
         <h3 class="post-subtitle">
-            Tutorials & some base examples
+            Question answer with tensorflow
         </h3>
         
         <div class="post-content-preview">
-            Introduction
-Why use Spark
-Spark是一个大规模数据处理的快速通用引擎
+            Question answer with tensorflow
 
-  速度 Spark在内存中运行比Hadoop快100倍以上，在硬盘上运行比Hadoop快10倍以上
-  便捷 Spark提供超过80+的高阶操作去建立并行的应用，可以使用Python、R、Scale等高阶语言进行交互
-  通用 Spark提供了一系列的类库，包括SQL、DataFrame、...
+QA 系统用于回答自然语言提出的问题，QA系统从文本和图像提取信息后去回答问题，这种系统主要被分成两块：open domain回答的答案不限定于某个领域，close domain回答的问题限定于某个领域如医学、网点常用服务内容。 
+本文主要使用动态记忆伸进网络作为QA的算法，主要使用Tensorflow作为开发的框架。
+
+环境...
         </div>
     </a>
     <p class="post-meta">
-        Posted by YangLong on May 20, 2018
+        Posted by YangLong on May 11, 2018
     </p>
 </div>
 <hr>
 
 <div class="post-preview">
-    <a href="/2017/12/17/pysql_summary/">
+    <a href="/2018/04/01/text_classfication_with_cnn/">
         <h2 class="post-title">
-            Pymssql Summary
+            CNN网络进行文本分类
         </h2>
         
         <h3 class="post-subtitle">
-            pymssql basic feature & _mssql
+            Text Classfication with CNN
         </h3>
         
         <div class="post-content-preview">
-            Intruction
-The pymssql package consists of two modules:
-•pymssql – use it if you care about DB-API compliance, or if you are accustomed to DB-API syntax
-•_mssql – use it if you care about performan...
+            翻译中….
+
         </div>
     </a>
     <p class="post-meta">
-        Posted by YangLong on December 17, 2017
+        Posted by YangLong on April 1, 2018
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2018/01/20/genism/">
+        <h2 class="post-title">
+            Gensim的应用
+        </h2>
+        
+        <h3 class="post-subtitle">
+            Gensim的介绍和应用
+        </h3>
+        
+        <div class="post-content-preview">
+            Gensim的应用
+Why use Gensim?
+
+  Scalable statistical semantics  可伸缩的统计语法
+  Analyze plain-text documents for semantic structure 纯文本的分析语法结构
+  Retrieve semantically similar documents 检索相似语义文档
+
+
+Example
+语...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by YangLong on January 20, 2018
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2018/01/20/lsa_model/">
+        <h2 class="post-title">
+            潜在语义分析
+        </h2>
+        
+        <h3 class="post-subtitle">
+            Latent semantic analysis
+        </h3>
+        
+        <div class="post-content-preview">
+            LSA Latent semantic analysis  潜在语义分析
+其核心思想是把我们所拥有的文档-术语矩阵分解成相互独立的文档-主题矩阵和主题-术语矩阵,其主要方法是使用SVD奇异值分解来进行
+
+#### Step.1 生成文档-术语模型 
+ 如果在词汇表中给出 m 个文档和 n 个单词，我们可以构造一个 m×n 的矩阵 A，其中每行代表一个文档，每列代表一个单词。在 LSA 的最简...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by YangLong on January 20, 2018
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2018/01/08/lda_model/">
+        <h2 class="post-title">
+            主题生成模型
+        </h2>
+        
+        <h3 class="post-subtitle">
+            Latent Dirichlet Allocation
+        </h3>
+        
+        <div class="post-content-preview">
+            LDA(Latent Dirichlet Allocation) 主题模型
+
+Refrence
+
+  Parameter estimation for text analysis   https://users.soe.ucsc.edu/~amichelo/docs/text-est2.pdf
+Wikipedia https://en.wikipedia.org/wiki/Latent_Di...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by YangLong on January 8, 2018
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2017/10/15/word_embdding/">
+        <h2 class="post-title">
+            词向量
+        </h2>
+        
+        <h3 class="post-subtitle">
+            Word Embdding & Gram
+        </h3>
+        
+        <div class="post-content-preview">
+            Word Embdding &amp; Gram  词向量&amp;Gram模型
+Word Eembdding 词向量
+
+NPLM（Neural  Probablistic Language Model）神经概率语言模型
+语言模型 词串是${w_t}_{t=1}^T=w_1^T=w_1,w_2,…,w_T$自然语言的概率$P(w_1^T)$
+
+  $w_t$下标 t 表示其是词串中的第 t ...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by YangLong on October 15, 2017
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2017/10/15/distance_compute/">
+        <h2 class="post-title">
+            距离计算
+        </h2>
+        
+        <h3 class="post-subtitle">
+            Manhattan Distance & Minkowski Distance & Minkowski Distance
+        </h3>
+        
+        <div class="post-content-preview">
+            Manhattan Distance 曼哈顿距离
+曼哈顿距离又称计程车几何距离或方格线距离，是由十九世纪的赫尔曼·闵可夫斯基所创词汇 ，为欧几里得几何度量空间的几何学之用语，用以标明两个点上在标准坐标系上的绝对轴距之总和。曼哈顿距离的正式意义为L1-距离或城市区块距离，也就是在欧几里得空间的固定直角坐标系上两点所形成的线段对轴产生的投影的距离总和。例如在平面上，坐标(x1,y1)的点P1与坐...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by YangLong on October 15, 2017
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2017/10/02/autoencoder/">
+        <h2 class="post-title">
+            自动解码
+        </h2>
+        
+        <h3 class="post-subtitle">
+            AutoEncoder
+        </h3>
+        
+        <div class="post-content-preview">
+            Summary
+
+  自动编码器基于这样一个事实：原始input（设为x）经过加权（W、b)、映射（Sigmoid）之后得到y，再对y反向加权映射回来成为z
+  通过反复迭代训练两组（W、b），使得误差函数最小，即尽可能保证z近似于x，即完美重构了x。
+  那么可以说正向第一组权（W、b）是成功的，很好的学习了input中的关键特征，不然也不会重构得如此完美
+  The autoencode...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by YangLong on October 2, 2017
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2017/10/02/k_means/">
+        <h2 class="post-title">
+            聚类算法
+        </h2>
+        
+        <h3 class="post-subtitle">
+            K-Means
+        </h3>
+        
+        <div class="post-content-preview">
+            K-Means 硬聚类算法
+
+
+K-means算法是很典型的基于距离的聚类算法，采用距离作为相似性的评价指标，即认为两个对象的距离越近，其相似度就越大。该算法认为簇是由距离靠近的对象组成的，因此把得到紧凑且独立的簇作为最终目标。
+
+计算步骤：
+
+  从N个文档随机选取K个文档作为质心
+  对剩余的每个文档测量其到每个质心的距离，并把它归到最近的质心的类
+  新计算已经得到的各个类的质心
+  ...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by YangLong on October 2, 2017
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2017/07/20/decision_tree/">
+        <h2 class="post-title">
+            决策树
+        </h2>
+        
+        <h3 class="post-subtitle">
+            Decision Tree
+        </h3>
+        
+        <div class="post-content-preview">
+            Decision Tree 决策树
+
+Refrence
+
+  https://blog.csdn.net/huanghui147258369/article/details/53689068
+http://ml.apachecn.org/mlia/design-tree/
+
+
+Theory
+分类树（决策树）是一种十分常用的分类方法。他是一种监管学习，所谓监管学习就是给定一堆样本，每个样本都有...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by YangLong on July 20, 2017
     </p>
 </div>
 <hr>
 
 
 <!-- Pager -->
+
+<ul class="pager">
+    
+    
+    <li class="next">
+        <a href="/page2">Older Posts &rarr;</a>
+    </li>
+    
+</ul>
 
 
     		</div>
@@ -253,17 +468,47 @@ The pymssql package consists of two modules:
                     <div class="tags">
                         
                             
-                        
+                                <a href="/tags/#C#.Net Framework" title="C#.Net Framework" rel="6">
+                                    C#.Net Framework
+                                </a>
                             
                         
                             
-                                <a href="/tags/#Big Data" title="Big Data" rel="2">
-                                    Big Data
+                                <a href="/tags/#SqlServer" title="SqlServer" rel="5">
+                                    SqlServer
+                                </a>
+                            
+                        
+                            
+                                <a href="/tags/#Database" title="Database" rel="6">
+                                    Database
                                 </a>
                             
                         
                             
                         
+                            
+                                <a href="/tags/#神经网络" title="神经网络" rel="6">
+                                    神经网络
+                                </a>
+                            
+                        
+                            
+                                <a href="/tags/#机器学习" title="机器学习" rel="12">
+                                    机器学习
+                                </a>
+                            
+                        
+                            
+                                <a href="/tags/#自然语言处理" title="自然语言处理" rel="4">
+                                    自然语言处理
+                                </a>
+                            
+                        
+                            
+                                <a href="/tags/#我的翻译" title="我的翻译" rel="2">
+                                    我的翻译
+                                </a>
                             
                         
                     </div>
@@ -279,73 +524,12 @@ The pymssql package consists of two modules:
                         
                         
                             <p>累了就睡觉,醒了就微笑</p>
-                        
-                        <!-- SNS Link -->
-                        <ul class="list-inline">
-                            
-                            
-                            <li>
-                                <a target="_blank" href="https://github.com/ylhelloworld">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            
-                            
-                            <li>
-                                <a target="_blank" href="https://github.com/yanglong">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-stack fa-stack-1x fa-inverse">K</i>
-                                    </span>
-                                </a>
-                            </li>
-                            
-                            
-                            <li>
-                                <a href="https://twitter.com/yanglong0824">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            
-                            
-                            
-                            <li>
-                                <a target="_blank" href="http://weibo.com/yl_helloworld">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            
-                            
-                 
-                            
-                        </ul>
+                         
                     </div>
                 </section>
-                <!-- Friends Blog -->
-                
                 <hr>
-                <h5>FAVORITE WEBSITE</h5>
-                <ul class="list-inline">
-                    
-                        <li><a href="https://www.nature.com/">Nature</a></li>
-                    
-                        <li><a href="http://Medium.com/">Medium</a></li>
-                    
-                        <li><a href="http://www.fivethirtyeight.com/">FiveThirtyEight</a></li>
-                    
-                        <li><a href="https://code.google.com">Google Code</a></li>
-                    
-                </ul>
-                
+                <!-- Friends Blog --> 
+                <!--  -->
     		</div>
         
 	</div>
@@ -381,7 +565,7 @@ The pymssql package consists of two modules:
                     
                     
                     <li>
-                        <a href="https://twitter.com/yanglong0824">
+                        <a href="https://twitter.com/YangLon92893044">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
@@ -393,25 +577,26 @@ The pymssql package consists of two modules:
                     <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
                     
                     
-                    <li>
-                        <a target="_blank" href="http://weibo.com/yl_helloworld">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
 
 
                     
   
                     
+                    
+                    <li>
+                        <a target="_blank" href="https://www.instagram.com/yanglong0824">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; Sheep Dragon's Blog 2018
+                    Copyright &copy; Sheep Dragon's Blog 2019
                     <br>
-                    Jekyll | Github Pages | Theme by  Hux 
+                    Jekyll | Github Pages
                     <!-- <iframe
                         style="margin-left: 2px; margin-bottom:-5px;"
                         frameborder="0" scrolling="0" width="100px" height="20px"
@@ -433,12 +618,32 @@ The pymssql package consists of two modules:
 <!-- Custom Theme JavaScript -->
 <script src="/js/hux-blog.min.js "></script>
 
+
+
 <!-- Service Worker -->
 
 <script src="/js/snackbar.js "></script>
 <script src="/js/sw-registration.js "></script>
 
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      TeX: {
+        equationNumbers: {
+          autoNumber: "AMS"
+        }
+      },
+      tex2jax: {
+        inlineMath: [ ['$','$'], ['\(', '\)'] ],
+        displayMath: [ ['$$','$$'] ],
+        processEscapes: true,
+      }
+    });
+  </script>
+  <script type="text/javascript"
+          src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  
 <!-- async load function -->
 <script>
     function async(u, c) {
@@ -498,7 +703,7 @@ The pymssql package consists of two modules:
 
 <script>
     // dynamic User by Hux
-    var _gaId = 'UA-9892322-1';
+    var _gaId = 'UA-222222-1';
     var _gaDomain = 'sheepdragon.me';
 
     // Originial
