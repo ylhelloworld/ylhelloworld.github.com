@@ -1,10 +1,10 @@
 # Site settings
-title: Sheep Dragon's Blog
-SEOTitle: Sheep Dragon's Blog
+title: YangLong's Blog
+SEOTitle: YangLong's Blog
 header-img: img/spiderman/home.jpg
 email: yl_helloworld@outlook.com
-description: "Sheep Dragon ,ylhelloworld"
-keyword: "Sheep Dragon,ylhelloworld"
+description: "YangLong ,ylhelloworld"
+keyword: "YangLong,ylhelloworld"
 url: "https://ylhelloworld.github.com"              # your host, for absolute URL
 baseurl: ""                              # for example, '/blog' if your blog hosted on 'host/blog'
 
@@ -17,8 +17,8 @@ RSS: false
 #zhihu_username:     yl_helloworld
 github_username:    ylhelloworld
 kaggle_username: yanglong
-twitter_username:   YangLon92893044
-instagram_username: yanglong0824
+#twitter_username:   YangLon92893044
+#instagram_username: yanglong0824
 #facebook_username:  yl_helloworld
 #linkedin_username:  firstname-lastname-idxxxx
 
