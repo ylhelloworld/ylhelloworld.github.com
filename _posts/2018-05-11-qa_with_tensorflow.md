@@ -803,6 +803,6 @@ sess.close()
 
 - **备用矢量化方案和来源**。尝试在句子和向量之间进行更加智能的映射，或者使用不同的数据集。GloVe提供了高达840亿个不同标记的大型库，每个库有300个尺寸。
 
-### Refrence
-> https://www.oreilly.com/ideas/question-answering-with-tensorflow  
-> [01. [arxiv.org]Ask Me Anything: Dynamic Memory Networks for Natural Language Processing](https://arxiv.org/abs/1506.07285)
+### Refrence  
+> [01. [oreilly.com]Question answering with TensorFlow：Using advanced neural networks to tackle challenging natural language tasks](https://www.oreilly.com/ideas/question-answering-with-tensorflow)   
+> [02. [arxiv.org]Ask Me Anything: Dynamic Memory Networks for Natural Language Processing](https://arxiv.org/abs/1506.07285)
