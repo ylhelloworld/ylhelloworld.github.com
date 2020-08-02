@@ -274,7 +274,7 @@ $$
 
 
 ### Momentum  *冲量梯度下降算法*  
-![IMAGE](https://raw.githubusercontent.com/ylhelloworld/resource/master/Image/20180603001_mov.jpeg) 
+![IMAGE](http://ylhelloworld.github.io/img/resource/20180603001_mov.jpeg) 
 
 冲量梯度下降算法是BorisPolyak在1964年提出的，其基于这样一个物理事实：将一个小球从山顶滚下，其初始速率很慢，但在加速度作用下速率很快增加，并最终由于阻力的存在达到一个稳定速率。  
 momentum即动量，它模拟的是物体运动时的惯性，即更新的时候在一定程度上保留之前更新的方向，同时利用当前batch的梯度微调最终的更新方向。这样一来，可以在一定程度上增加稳定性，从而学习地更快，并且还有一定摆脱局部最优的能力： 

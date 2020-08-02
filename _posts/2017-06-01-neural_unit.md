@@ -42,7 +42,7 @@ $$
 > 代码实现参考 *https://github.com/hanbt/learn_dl/blob/master/perceptron.py*
 
 ## 非线性神经单元
-![IMAGE](https://raw.githubusercontent.com/ylhelloworld/resource/master/Image/20180128002-nn.gif) 
+![IMAGE](http://ylhelloworld.github.io/img/resource/20180128002-nn.gif) 
 
 #### 激活函数
 - 激活函数使用Sigmod函数

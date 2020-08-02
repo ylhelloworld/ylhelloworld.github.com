@@ -13,7 +13,7 @@ tags:
 ---
  
 ## Introduction Recurrent Neural Network
-![IMAGE](https://raw.githubusercontent.com/ylhelloworld/resource/master/Image/20171219001_rnn.jpg)  
+![IMAGE](http://ylhelloworld.github.io/img/resource/20171219001_rnn.jpg)  
 ### Basic Recutrent Neral Network
 循环神经网络也分为两层，Recurrent Layer & Full-Connection Layer
 - 网络在t时刻接收到输入$x_t$之后，隐藏层的值是$s_t$，输出值是$o_t$
@@ -41,7 +41,7 @@ $$
 
 
 ### Two-Way Recurrent Neural Network
-![IMAGE](https://raw.githubusercontent.com/ylhelloworld/resource/master/Image/20171219002_rnn.png)  
+![IMAGE](http://ylhelloworld.github.io/img/resource/20171219002_rnn.png)  
 双向循环神经网络，隐藏层要计算两个值，一个是$s_t$正方向的值，一个是${s}_t'$反方向的值
 计算如下：
 
@@ -55,7 +55,7 @@ $$
 
  
 ### Deep Recurrent Neural Network
-![IMAGE](https://raw.githubusercontent.com/ylhelloworld/resource/master/Image/20171219003_rnn.png)  
+![IMAGE](http://ylhelloworld.github.io/img/resource/20171219003_rnn.png)  
 有多个隐藏层的深度循环网络
 
  $$
@@ -78,9 +78,9 @@ $$
 - 随机梯度下降更新权重
 
 
-![IMAGE](https://raw.githubusercontent.com/ylhelloworld/resource/master/Image/20180102003_rnn.png)
-![IMAGE](https://raw.githubusercontent.com/ylhelloworld/resource/master/Image/20180102001_rnn.png)
-![IMAGE](https://raw.githubusercontent.com/ylhelloworld/resource/master/Image/20180102002_rnn.png)
+![IMAGE](http://ylhelloworld.github.io/img/resource/20180102003_rnn.png)
+![IMAGE](http://ylhelloworld.github.io/img/resource/20180102001_rnn.png)
+![IMAGE](http://ylhelloworld.github.io/img/resource/20180102002_rnn.png)
 
 #### Forward Calculate
 计算公式如下：

@@ -29,7 +29,7 @@ $$
 
 - 矩阵A,B的行列数分别为$m_a,n_a,m_a,m_b$
 - s,t满足$0\le{s}\lt{m_a+m_b-1}, 0\le{t}\lt{n_a+n_b-1}$  
-![IMAGE](https://raw.githubusercontent.com/ylhelloworld/resource/master/Image/20171219001_cnn.png)  
+![IMAGE](http://ylhelloworld.github.io/img/resource/20171219001_cnn.png)  
 ##### 此公式可以简写为
 
  $$
@@ -49,7 +49,7 @@ $$
 ### Convelutional Layer
 ####  Input Matix，Filter Matrix，Feature Map Matrix  
 输入矩阵，特征筛选矩阵，输出矩阵(特征映射矩阵)如下：  
-![IMAGE](https://raw.githubusercontent.com/ylhelloworld/resource/master/Image/20171219002_cnn.png)  
+![IMAGE](http://ylhelloworld.github.io/img/resource/20171219002_cnn.png)  
 - $X_{ij}$表示Input矩阵的i行，第j列
 - $W_{mn}$表示Filter矩阵的m行，第n列 
 - $W_{b}$表示Filter矩阵的偏执项
@@ -89,13 +89,13 @@ A=f(\sum_{d=0}^{D-1}X_d*W_d+w_b) [\mathbf{USING\ MF03,MF04}]
 $$ 
 
 > 如下图计算示例：
-> ![IMAGE](https://raw.githubusercontent.com/ylhelloworld/resource/master/Image/20171219007_cnn.gif)
+> ![IMAGE](http://ylhelloworld.github.io/img/resource/20171219007_cnn.gif)
 
 
 ### Pooling Layer Calculate
 Pooling的层的主要作用是下采样，主要有两种方式Max Pooling 和Mean Pooling  
 - Max Pooling是取n*n中的U最大值  
-![IMAGE](https://raw.githubusercontent.com/ylhelloworld/resource/master/Image/20171219008_cnn.png)
+![IMAGE](http://ylhelloworld.github.io/img/resource/20171219008_cnn.png)
 - Mean Pooling是取n*n中的平均值  
 
 
@@ -114,7 +114,7 @@ Train Step
 - 梯度下降更新每个权重w
 ### Train Convlution Layer  
 ##### 误差传递  
-![IMAGE](https://raw.githubusercontent.com/ylhelloworld/resource/master/Image/20171219009_cnn.png)
+![IMAGE](http://ylhelloworld.github.io/img/resource/20171219009_cnn.png)
 
 
  $$
@@ -198,7 +198,7 @@ a_{i,j}=f(\sum_{m=0}^{2}\sum_{n=0}^{2}w_{m,n}x_{i+m,j+n}+w_b)
 $$ 
 
 **如算输出矩阵的a00：**
-![IMAGE](https://raw.githubusercontent.com/ylhelloworld/resource/master/Image/20171219003_cnn.png)  
+![IMAGE](http://ylhelloworld.github.io/img/resource/20171219003_cnn.png)  
 
  $$
 \begin{aligned}
@@ -211,14 +211,14 @@ a_{0,0}&=f(\sum_{m=0}^{2}\sum_{n=0}^{2}w_{m,n}x_{m+0,n+0}+w_b)\\
 $$ 
 
 **步幅为1是的计算结果如下：**  
-![IMAGE](https://raw.githubusercontent.com/ylhelloworld/resource/master/Image/20171219004_cnn.gif)  
+![IMAGE](http://ylhelloworld.github.io/img/resource/20171219004_cnn.gif)  
 **当步幅为2时:**
 
-![IMAGE](https://raw.githubusercontent.com/ylhelloworld/resource/master/Image/20171219005_cnn.png)
+![IMAGE](http://ylhelloworld.github.io/img/resource/20171219005_cnn.png)
 
 **步幅为2时的计算结果如下:**  
 
-![IMAGE](https://raw.githubusercontent.com/ylhelloworld/resource/master/Image/20171219006_cnn.png) 
+![IMAGE](http://ylhelloworld.github.io/img/resource/20171219006_cnn.png) 
 **最后得出的卷积通用公式为:**
 
  $$
@@ -321,7 +321,7 @@ $$
  \frac{\partial{E_d}}{\partial{w_{1,2}}}=\delta^l_{1,1}a^{l-1}_{1,2}+\delta^l_{1,2}a^{l-1}_{1,3}+\delta^l_{2,1}a^{l-1}_{2,2}+\delta^l_{2,2}a^{l-1}_{2,3}
 $$ 
 
-![IMAGE](https://raw.githubusercontent.com/ylhelloworld/resource/master/Image/20171219010_cnn.png)  
+![IMAGE](http://ylhelloworld.github.io/img/resource/20171219010_cnn.png)  
 ##### 所以得到通用公式
 
  $$
@@ -339,7 +339,7 @@ $$
 $$ 
 
 ### 04 calculate max pool loss
-[IMAGE](https://raw.githubusercontent.com/ylhelloworld/resource/master/Image/20171219011_cnn.png)  
+[IMAGE](http://ylhelloworld.github.io/img/resource/20171219011_cnn.png)  
 Max Pooling的计算方式   
 
  $$
@@ -386,7 +386,7 @@ $$
 
 ### 05 calcute mean pool loss 
 #### 推理过程
-[IMAGE](https://raw.githubusercontent.com/ylhelloworld/resource/master/Image/20171219013_cnn.png)  
+[IMAGE](http://ylhelloworld.github.io/img/resource/20171219013_cnn.png)  
 Mean Pooling 的计算方式为  
 
  $$

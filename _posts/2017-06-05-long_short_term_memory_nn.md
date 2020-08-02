@@ -17,21 +17,21 @@ tags:
 
 与传统的RNN相比，LSTM多出一个细胞状态链用于存储细胞状态，LSTM中包含了Gate的概念，新增3个门来控制细胞状态，包括遗忘门（Forget Gate)、输入门（Input Gate）、输出门（Output Gate）
 - LSTM 多出一个Cell状态链
-![IMAGE](https://raw.githubusercontent.com/ylhelloworld/resource/master/Image/20180122017-LSTM3-C-line.png)
+![IMAGE](http://ylhelloworld.github.io/img/resource/20180122017-LSTM3-C-line.png)
 
 - 传统的RNN只包含一tanh层
 
-![IMAGE](https://raw.githubusercontent.com/ylhelloworld/resource/master/Image/20180122015-LSTM3-SimpleRNN.png)
+![IMAGE](http://ylhelloworld.github.io/img/resource/20180122015-LSTM3-SimpleRNN.png)
 
 
 - LSTM 含有四个交互层
 ![IMAGE](http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-chain.png)
 
-![IMAGE](https://raw.githubusercontent.com/ylhelloworld/resource/master/Image/20180122016-LSTM2-notation.png)
+![IMAGE](http://ylhelloworld.github.io/img/resource/20180122016-LSTM2-notation.png)
 
 - Forget Gate 控制丢弃的信息
 
-![IMAGE](https://raw.githubusercontent.com/ylhelloworld/resource/master/Image/20180122019-LSTM3-focus-f.png)
+![IMAGE](http://ylhelloworld.github.io/img/resource/20180122019-LSTM3-focus-f.png)
 
  $$
 \mathbf{f}_t=\sigma(W_f\cdot[\mathbf{h}_{t-1},\mathbf{x}_t]+\mathbf{b}_f)\qquad\quad
@@ -40,7 +40,7 @@ $$
 - Input Gate 控制更新的信息
 
 
-![IMAGE](https://raw.githubusercontent.com/ylhelloworld/resource/master/Image/20180122020-LSTM3-focus-i.png)
+![IMAGE](http://ylhelloworld.github.io/img/resource/20180122020-LSTM3-focus-i.png)
 
  $$
 \mathbf{i}_t=\sigma(W_i\cdot[\mathbf{h}_{t-1},\mathbf{x}_t]+\mathbf{b}_i)\qquad\quad 
@@ -52,14 +52,14 @@ $$
 
 - 更新细胞状态
 
-![IMAGE](https://raw.githubusercontent.com/ylhelloworld/resource/master/Image/20180122021-LSTM3-focus-C.png)
+![IMAGE](http://ylhelloworld.github.io/img/resource/20180122021-LSTM3-focus-C.png)
 
  $$
 \mathbf{c}_t=f_t\circ{\mathbf{c}_{t-1}}+i_t\circ{\mathbf{\tilde{c}}_t}\qquad\quad
 $$ 
 
 - Output Gate控制输出的信息
-![IMAGE](https://raw.githubusercontent.com/ylhelloworld/resource/master/Image/20180122022-LSTM3-focus-o.png)
+![IMAGE](http://ylhelloworld.github.io/img/resource/20180122022-LSTM3-focus-o.png)
 
  $$
 \mathbf{o}_t=\sigma(W_o\cdot[\mathbf{h}_{t-1},\mathbf{x}_t]+\mathbf{b}_o)\qquad\quad 

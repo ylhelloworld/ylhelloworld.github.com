@@ -391,9 +391,9 @@ Create  Job  Job_PerformanceMonitor_Clear
 下面这个列子为分析近两月的每个小时节点的数据库性能，可以明显发现每两个小时，数据库性能有明细的下降，根据记录日志再分析是数据库定时转储引起  
 
 2018年三月份的每个小时的性能分析
-![IMAGE](https://raw.githubusercontent.com/ylhelloworld/resource/master/Image/20180628001_chart.png)
+![IMAGE](http://ylhelloworld.github.io/img/resource/20180628001_chart.png)
 
 
 2018年二月份~三月份的每个小时的性能分析
-![IMAGE](https://raw.githubusercontent.com/ylhelloworld/resource/master/Image/20180628002_chart.png)
+![IMAGE](http://ylhelloworld.github.io/img/resource/20180628002_chart.png)
 

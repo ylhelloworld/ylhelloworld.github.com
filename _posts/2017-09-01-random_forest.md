@@ -21,7 +21,7 @@ tags:
 - 每棵决策树都最大可能地进行生长而不进行剪枝；
 - 通过对所有的决策树进行加总来预测新的数据（在分类时采用多数投票，在回归时采用平均）
 
-<img width='400px' heigh='400px' src='https://raw.githubusercontent.com/ylhelloworld/resource/master/Image/20190414_forest_07.jpg'/>
+<img width='400px' heigh='400px' src='http://ylhelloworld.github.io/img/resource/20190414_forest_07.jpg'/>
 
 ## Solution
 开发流程
@@ -266,22 +266,22 @@ def evaluate_algorithm(dataset, algorithm, n_folds, *args):
 
 CART 1 : Variable Age | CART 2 : Variable Gender
 ---|---
-<img  src='https://raw.githubusercontent.com/ylhelloworld/resource/master/Image/20190414_forest_01.png'/>| <img src='https://raw.githubusercontent.com/ylhelloworld/resource/master/Image/20190414_forest_02.png'/>
+<img  src='http://ylhelloworld.github.io/img/resource/20190414_forest_01.png'/>| <img src='http://ylhelloworld.github.io/img/resource/20190414_forest_02.png'/>
 
 
 
 
 CART 3 : Variable Education | CART 4 : Variable Residence
 ---|---
-<img  src='https://raw.githubusercontent.com/ylhelloworld/resource/master/Image/20190414_forest_03.png'/>| <img  src='https://raw.githubusercontent.com/ylhelloworld/resource/master/Image/20190414_forest_04.png'/>
+<img  src='http://ylhelloworld.github.io/img/resource/20190414_forest_03.png'/>| <img  src='http://ylhelloworld.github.io/img/resource/20190414_forest_04.png'/>
 CART 5 : Variable Industry | -
 ---|---
-<img  src='https://raw.githubusercontent.com/ylhelloworld/resource/master/Image/20190414_forest_05.png'/>| 
+<img  src='http://ylhelloworld.github.io/img/resource/20190414_forest_05.png'/>| 
 
 我们要预测的某个人的信息如下：
 1. Age : 35 years ; 2. Gender : Male ; 3. Highest Educational Qualification : Diploma holder; 4. Industry : Manufacturing; 5. Residence : Metro.
 根据这五棵CART树的分类结果，我们可以针对这个人的信息建立收入层次的分布情况：
-<img   src='https://raw.githubusercontent.com/ylhelloworld/resource/master/Image/20190414_forest_06.png'/>
+<img   src='http://ylhelloworld.github.io/img/resource/20190414_forest_06.png'/>
 最后，我们得出结论，这个人的收入层次70%是一等，大约24%为二等，6%为三等，所以最终认定该人属于一等收入层次（小于$40,000）。
 
 
@@ -439,7 +439,7 @@ for ds in datasets:
 figure.subplots_adjust(left=.02, right=.98)
 plt.show()
 ```
-<img width='500px' src='https://raw.githubusercontent.com/ylhelloworld/resource/master/Image/20190414_forest_08.png'/>
+<img width='500px' src='http://ylhelloworld.github.io/img/resource/20190414_forest_08.png'/>
 
 
 #### Spark  

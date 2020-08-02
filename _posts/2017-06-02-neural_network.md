@@ -13,7 +13,7 @@ tags:
 ---  
 ## 神经单元 *Neural Unit*
 
-![IMAGE](https://raw.githubusercontent.com/ylhelloworld/resource/master/Image/20180128002-nn.gif)  
+![IMAGE](http://ylhelloworld.github.io/img/resource/20180128002-nn.gif)  
 - 一个神经单元可以接受多个输入：**x1,x2...xn**，和一个偏执项**b**
 - 神经单元的输出计算公式为：$f(x)=w^Tx+b$
 - 最后是一个激活函数，这里使用Sigmod函数  
@@ -23,7 +23,7 @@ y=sigmode(z)=\frac{1}{1+e^{-z}}= \frac{1}{1+e^{-(w^Tx+b)}}
 $$ 
 
 ##  全连接神经网络 *Full-Connection Neural Network*
-![IMAGE](https://raw.githubusercontent.com/ylhelloworld/resource/master/Image/20180128003-nn.png)  
+![IMAGE](http://ylhelloworld.github.io/img/resource/20180128003-nn.png)  
 计算隐藏层第一层
 
 
@@ -54,7 +54,7 @@ y_1&=sigmoid(\vec{w}^T\centerdot\vec{a})\\
 $$ 
 
 ##  反向传播 *Back Propagetion*
-![IMAGE](https://raw.githubusercontent.com/ylhelloworld/resource/master/Image/20180128001-NN.png)  
+![IMAGE](http://ylhelloworld.github.io/img/resource/20180128001-NN.png)  
 #### 已有数据 *Given Data*
 
  $$
